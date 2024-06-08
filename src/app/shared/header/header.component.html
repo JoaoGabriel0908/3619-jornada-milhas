@@ -3,10 +3,12 @@
     <a routerLink="/">
       <img src="assets/imagens/logo.png" alt="Logo da aplicação Jornada">
     </a>
-    <span class="spacer"></span>
-    <div class="links-toolbar">
-      <button mat-button>Vender milhas</button>
-      <button mat-button>Sobre</button>
+    <button class="menu-button" (click)="toggleMenu()" *ngIf="isMobile">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <div class="links-toolbar" *ngIf="showMenu || !isMobile">
+      <button mat-button routerLink="/vender-milhas">Vender milhas</button>
+      <button mat-button routerLink="/sobre">Sobre</button>
       <ng-container *ngIf="user$ | async as pessoaUsuaria; else login">
         <a routerLink="/perfil">
           <img src="assets/icones/user.png" alt="Ícone da pessoa usuária">
@@ -20,4 +22,3 @@
     </div>
   </mat-toolbar>
 </header>
-

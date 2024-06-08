@@ -9,14 +9,29 @@ import { UserService } from 'src/app/autenticacao/services/user.service';
 })
 export class HeaderComponent {
 
+  showMenu = false;
+  isMobile = false;
+
   constructor(
     private userService: UserService,
-    private router: Router) {}
+    private router: Router
+  ) {
+    this.checkIfMobile();
+    window.onresize = () => this.checkIfMobile();
+  }
 
   user$ = this.userService.retornarUser();
 
   logout() {
     this.userService.logout();
     this.router.navigate(['/login'])
+  }
+
+  toggleMenu() {
+    this.showMenu = !this.showMenu;
+  }
+
+  checkIfMobile() {
+    this.isMobile = window.innerWidth < 768;
   }
 }
