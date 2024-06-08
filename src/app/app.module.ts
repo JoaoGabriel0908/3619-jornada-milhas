@@ -12,6 +12,7 @@ import { MaterialModule } from './core/material/material.module';
 import { HomeModule } from './home/home.module';
 import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { BuscaModule } from './busca/busca.module';
+import { DetalheModule } from './detalhe/detalhe.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BuscaModule } from './busca/busca.module';
     MaterialModule,
     HomeModule,
     AutenticacaoModule,
-    BuscaModule
+    BuscaModule,
+    DetalheModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

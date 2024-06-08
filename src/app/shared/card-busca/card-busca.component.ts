@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Promocao } from 'src/app/core/types/type';
 
 @Component({
@@ -8,4 +9,12 @@ import { Promocao } from 'src/app/core/types/type';
 })
 export class CardBuscaComponent {
   @Input() promocao!: Promocao;
+
+  constructor(
+    private router: Router
+  ) {}
+
+  onDetalheClick(): void {
+    this.router.navigate(['detalhe']);
+  }
 }
