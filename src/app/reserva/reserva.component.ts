@@ -24,8 +24,8 @@ export class ReservaComponent {
   ];
 
   form = new FormGroup({
-    vooRadioSelection: new FormControl(null, Validators.required),
-    acomodacaoRadioSelection: new FormControl(null, Validators.required),
-    carroRadioSelection: new FormControl(null, Validators.required)
+    vooRadioSelection: new FormControl('', Validators.required),
+    acomodacaoRadioSelection: new FormControl('', Validators.required),
+    carroRadioSelection: new FormControl('', Validators.required)
   });
 }
