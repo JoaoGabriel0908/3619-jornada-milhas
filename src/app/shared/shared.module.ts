@@ -1,3 +1,4 @@
+import { RadioButtonGroupComponent } from './radio-button-group/radio-button-group.component';
 import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { ReactiveFormsModule } from "@angular/forms";
@@ -31,6 +32,7 @@ import { MaterialModule } from "../core/material/material.module";
     HeaderComponent,
     SeletorPassageiroComponent,
     ModalComponent,
+    RadioButtonGroupComponent,
     BotaoControleComponent
   ],
   imports: [
@@ -51,7 +53,8 @@ import { MaterialModule } from "../core/material/material.module";
     HeaderComponent,
     SeletorPassageiroComponent,
     ModalComponent,
-    BotaoControleComponent
+    BotaoControleComponent,
+    RadioButtonGroupComponent
   ]
 })
 export class SharedModule { }

@@ -7,6 +7,7 @@ import { PerfilComponent } from './autenticacao/perfil/perfil.component';
 import { authGuard } from './autenticacao/auth.guard';
 import { BuscaComponent } from './busca/busca.component';
 import { DetalheComponent } from './detalhe/detalhe.component';
+import { ReservaComponent } from './reserva/reserva.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'detalhe',
     component: DetalheComponent
+  },
+  {
+    path: 'reserva',
+    component: ReservaComponent
   }
 ];
 

@@ -13,10 +13,11 @@ import { HomeModule } from './home/home.module';
 import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { BuscaModule } from './busca/busca.module';
 import { DetalheModule } from './detalhe/detalhe.module';
+import { ReservaModule } from './reserva/reserva.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,8 @@ import { DetalheModule } from './detalhe/detalhe.module';
     HomeModule,
     AutenticacaoModule,
     BuscaModule,
-    DetalheModule
+    DetalheModule,
+    ReservaModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

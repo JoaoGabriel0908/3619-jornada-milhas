@@ -5,6 +5,7 @@ import { SharedModule } from '@shared/shared.module';
 import { DepoimentosModule } from '../home/depoimentos/depoimentos.module';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('DetalheComponent', () => {
   let component: DetalheComponent;
@@ -18,6 +19,7 @@ describe('DetalheComponent', () => {
       imports: [
         SharedModule,
         DepoimentosModule,
+        RouterTestingModule,
         HttpClientTestingModule
       ],
       schemas: [
