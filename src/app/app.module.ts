@@ -51,6 +51,7 @@ import { PrecosComponent } from './shared/form-busca/filtros-complementares/prec
 import { LabelComponent } from './shared/form-busca/filtros-complementares/label/label.component';
 import { FiltrosComplementaresComponent } from './shared/form-busca/filtros-complementares/filtros-complementares.component';
 import { PassagemDestaqueComponent } from './shared/passagem-destaque/passagem-destaque.component';
+import { DetalheComponent } from './detalhe/detalhe.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +82,8 @@ import { PassagemDestaqueComponent } from './shared/passagem-destaque/passagem-d
     PrecosComponent,
     LabelComponent,
     FiltrosComplementaresComponent,
-    PassagemDestaqueComponent
+    PassagemDestaqueComponent,
+    DetalheComponent
   ],
   imports: [
     BrowserModule,
