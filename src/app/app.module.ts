@@ -13,12 +13,11 @@ import { HomeModule } from './home/home.module';
 import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { BuscaModule } from './busca/busca.module';
 import { DetalheModule } from './detalhe/detalhe.module';
-import { ReservaComponent } from './reserva/reserva.component';
+import { ReservaModule } from './reserva/reserva.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ReservaComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +30,8 @@ import { ReservaComponent } from './reserva/reserva.component';
     HomeModule,
     AutenticacaoModule,
     BuscaModule,
-    DetalheModule
+    DetalheModule,
+    ReservaModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

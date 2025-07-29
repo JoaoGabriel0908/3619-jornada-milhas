@@ -17,6 +17,7 @@ import { ModalComponent } from "./modal/modal.component";
 import { SeletorPassageiroComponent } from "./seletor-passageiro/seletor-passageiro.component";
 import { MaterialModule } from "../core/material/material.module";
 import { RadioButtonGroupComponent } from './radio-button-group/radio-button-group.component';
+import { ReservaComponent } from "../reserva/reserva.component";
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { RadioButtonGroupComponent } from './radio-button-group/radio-button-gro
     HeaderComponent,
     SeletorPassageiroComponent,
     ModalComponent,
-    BotaoControleComponent
+    BotaoControleComponent,
+    RadioButtonGroupComponent
   ]
 })
 export class SharedModule { }
