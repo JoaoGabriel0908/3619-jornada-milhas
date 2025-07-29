@@ -13,10 +13,12 @@ import { HomeModule } from './home/home.module';
 import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { BuscaModule } from './busca/busca.module';
 import { DetalheModule } from './detalhe/detalhe.module';
+import { ReservaComponent } from './reserva/reserva.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ReservaComponent,
   ],
   imports: [
     BrowserModule,

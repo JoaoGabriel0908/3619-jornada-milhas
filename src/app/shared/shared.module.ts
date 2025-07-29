@@ -16,6 +16,7 @@ import { HeaderComponent } from "./header/header.component";
 import { ModalComponent } from "./modal/modal.component";
 import { SeletorPassageiroComponent } from "./seletor-passageiro/seletor-passageiro.component";
 import { MaterialModule } from "../core/material/material.module";
+import { RadioButtonGroupComponent } from './radio-button-group/radio-button-group.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MaterialModule } from "../core/material/material.module";
     HeaderComponent,
     SeletorPassageiroComponent,
     ModalComponent,
-    BotaoControleComponent
+    BotaoControleComponent,
+    RadioButtonGroupComponent
   ],
   imports: [
     CommonModule,
