@@ -1,5 +1,6 @@
 import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { RadioOption } from 'src/app/core/types/type';
 
 @Component({
   selector: 'app-radio-button-group',
@@ -16,23 +17,34 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 
 export class RadioButtonGroupComponent implements ControlValueAccessor {
-  @Input() options: { id: string, value: string, label: string }[] = [];
-  @Output() selectionChange = new EventEmitter<string>();
+  @Input() options: RadioOption[] = [];
 
-  value!: string;
-  onChange!: (value: string) => void;
-  onTouched!: () => void;
-  disabled: boolean = false;
+  @Input() defaultValue!: RadioOption;
 
-  writeValue(value: string): void {
-    this.value = value;
+  @Input() flexDirection: 'row' | 'column' = 'column';
+
+  @Output() selectionChange = new EventEmitter<RadioOption>();
+
+  radioOption!: RadioOption;
+  onChange!: (value: RadioOption)=> void;
+  onTouched!: ()=> void;
+  disabled = false;
+
+  ngOnChanges(): void {
+    if (this.defaultValue) {
+      this.onSelect(this.defaultValue);
+    }
   }
 
-  registerOnChange(fn: (value: string) => void): void {
+  writeValue(value: RadioOption): void {
+    this.radioOption = value;
+  }
+
+  registerOnChange(fn: (value: RadioOption)=> void): void {
     this.onChange = fn;
   }
 
-  registerOnTouched(fn: () => void): void {
+  registerOnTouched(fn: ()=> void): void {
     this.onTouched = fn;
   }
 
@@ -40,12 +52,23 @@ export class RadioButtonGroupComponent implements ControlValueAccessor {
     this.disabled = isDisabled;
   }
 
-  onSelect(option: string): void {
+  onSelect(option: RadioOption): void {
     if (!this.disabled) {
-      this.value = option;
-      this.onChange(this.value);
-      this.selectionChange.emit(this.value);
-      this.onTouched();
+      this.radioOption = option;
+
+      if (this.onChange) {
+        this.onChange(this.radioOption);
+      }
+
+      if (this.onTouched) {
+        this.onTouched();
+      }
+
+      this.selectionChange.emit(this.radioOption);
     }
+  }
+
+  get flexGap(): string {
+    return this.flexDirection === 'column' ? '10px' : '40px';
   }
 }

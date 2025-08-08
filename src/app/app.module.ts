@@ -14,10 +14,13 @@ import { AutenticacaoModule } from './autenticacao/autenticacao.module';
 import { BuscaModule } from './busca/busca.module';
 import { DetalheModule } from './detalhe/detalhe.module';
 import { ReservaModule } from './reserva/reserva.module';
+import { PagamentoComponent } from './pagamento/pagamento.component';
+import { PagamentoService } from './pagamento/pagamento.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PagamentoComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { ReservaModule } from './reserva/reserva.module';
     provide: HTTP_INTERCEPTORS,
     useClass: AutenticacaoInterceptor,
     multi: true
-  }],
+  },
+  PagamentoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

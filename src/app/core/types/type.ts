@@ -91,3 +91,15 @@ export interface Destaques {
     maisBarata: Passagem;
     sugerida: Passagem;
 }
+
+export interface RadioOption {
+  id: string,
+  value: string,
+  label: string,
+  img?: { src: string, alt: string}
+}
+
+export interface QrCode {
+  codigo: string;
+  imagem: string;
+}
