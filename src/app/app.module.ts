@@ -16,11 +16,13 @@ import { DetalheModule } from './detalhe/detalhe.module';
 import { ReservaModule } from './reserva/reserva.module';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { PagamentoService } from './pagamento/pagamento.service';
+import { ConclusaoReservaComponent } from './conclusao-reserva/conclusao-reserva.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PagamentoComponent
+    PagamentoComponent,
+    ConclusaoReservaComponent
   ],
   imports: [
     BrowserModule,

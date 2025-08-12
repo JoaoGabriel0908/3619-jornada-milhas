@@ -103,3 +103,13 @@ export interface QrCode {
   codigo: string;
   imagem: string;
 }
+
+export interface Reserva {
+  destino: string;
+  dataIda: string;
+  dataVolta: string;
+  origem: string;
+  estadoOrigem: string;
+  adultos: number;
+  valorTotal: number;
+}

@@ -57,9 +57,9 @@ export class PagamentoComponent {
   }
 
   onSubmitForm(): void {
-    // this.pagamentoService.criarReserva()
-    //   .subscribe(() => {
-    //     this.router.navigate(['conclusao-reserva']);
-    //   });
+    this.pagamentoService.criarReserva()
+      .subscribe(() => {
+        this.router.navigate(['conclusao-reserva']);
+      });
   }
 }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { QrCode } from '../core/types/type';
+import { QrCode, Reserva } from '../core/types/type';
 
 @Injectable()
 export class PagamentoService {
@@ -15,5 +15,19 @@ export class PagamentoService {
 
   getQrCode(): Observable<QrCode> {
     return this.httpClient.get<QrCode>(`${this.apiUrl}/pagamento/qrcode`);
+  }
+
+  criarReserva(): Observable<any> {
+    const reserva: Reserva = {
+      destino: "Chile",
+      dataIda: "2025-09-23",
+      dataVolta: "2025-09-30",
+      origem: "Rio Branco",
+      estadoOrigem: "Acre",
+      adultos: 3,
+      valorTotal: 3769
+    };
+
+    return this.httpClient.post(`${this.apiUrl}/reserva`, reserva);
   }
 }
