@@ -17,12 +17,16 @@ import { ReservaModule } from './reserva/reserva.module';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { PagamentoService } from './pagamento/pagamento.service';
 import { ConclusaoReservaComponent } from './conclusao-reserva/conclusao-reserva.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
+import { ModalCancelarPedidoComponent } from './pedidos/modal-cancelar-pedido/modal-cancelar-pedido.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PagamentoComponent,
-    ConclusaoReservaComponent
+    ConclusaoReservaComponent,
+    PedidosComponent,
+    ModalCancelarPedidoComponent
   ],
   imports: [
     BrowserModule,

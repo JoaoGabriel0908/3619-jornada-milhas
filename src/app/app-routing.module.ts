@@ -10,6 +10,7 @@ import { DetalheComponent } from './detalhe/detalhe.component';
 import { ReservaComponent } from './reserva/reserva.component';
 import { PagamentoComponent } from './pagamento/pagamento.component';
 import { ConclusaoReservaComponent } from './conclusao-reserva/conclusao-reserva.component';
+import { PedidosComponent } from './pedidos/pedidos.component';
 
 const routes: Routes = [
   {
@@ -48,7 +49,11 @@ const routes: Routes = [
   {
     path: 'conclusao-reserva',
     component: ConclusaoReservaComponent
-}
+  },
+  {
+    path: 'pedidos',
+    component: PedidosComponent
+  }
 ];
 
 @NgModule({
