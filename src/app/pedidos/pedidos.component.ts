@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ModalCancelarPedidoComponent } from './modal-cancelar-pedido/modal-cancelar-pedido.component';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Reserva } from '../core/types/type';
+import { PedidosService } from './pedidos.service';
 
 @Component({
   selector: 'app-pedidos',
@@ -10,27 +12,27 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 })
 export class PedidosComponent {
 
-  public pedidos$: BehaviorSubject<any[]> = new BehaviorSubject<any[]>([
-    {
-      id: 1,
-      origem: 'Deserto do Atacama, Chile',
-      dataIda: '23/09/2025',
-      quantidadePessoas: 2,
-      dataVolta: '30/09/2025',
-      adultos: 2,
-      valorFinal: 5000
-    }
-  ]);
+  public pedidos$: Observable<Reserva[]> = this.pedidosService.getPedidos();
 
   constructor(
     private dialog: MatDialog,
+    private pedidosService: PedidosService,
   ) { }
 
-  onCancelarPedido(id: number): void {
+  onCancelarPedido(id: number | undefined): void {
     const dialogRef = this.dialog.open(ModalCancelarPedidoComponent, {
       width: '400px',
-      // data: { pedidoId: id }
+      data: { id }
     })
-  }
 
+    dialogRef.afterClosed().subscribe(id => {
+      if (id) {
+        this.pedidosService.removerPedido(id)
+          .subscribe(() => {
+            console.log('Pedido cancelado com sucesso!');
+          });
+      }
+    });
+
+  }
 }

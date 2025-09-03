@@ -93,23 +93,24 @@ export interface Destaques {
 }
 
 export interface RadioOption {
-  id: string,
-  value: string,
-  label: string,
-  img?: { src: string, alt: string}
+    id: string,
+    value: string,
+    label: string,
+    img?: { src: string, alt: string }
 }
 
 export interface QrCode {
-  codigo: string;
-  imagem: string;
+    codigo: string;
+    imagem: string;
 }
 
 export interface Reserva {
-  destino: string;
-  dataIda: string;
-  dataVolta: string;
-  origem: string;
-  estadoOrigem: string;
-  adultos: number;
-  valorTotal: number;
+    id?: number;
+    destino: string;
+    dataIda: string;
+    dataVolta: string;
+    origem: string;
+    estadoOrigem: string;
+    adultos: number;
+    valorTotal: number;
 }
